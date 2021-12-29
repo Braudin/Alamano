@@ -9,12 +9,13 @@
 // COLORES CORPORATIVOS
 $alamano_azul: #042974;
 $alamano_naranja: #e64a23;
-$p-s: 100px;
+$p-s: 50px;
 
 // MODIFICANDO VARIBLES DEL TEMA
 $body-bg: #f2f2f2;
 $primary: $alamano_naranja;
 $link-decoration: none !important;
+$list-group-bg: transparent;
 
 // FUENTES
 $font-family-sans-serif: 'Work Sans';
@@ -54,7 +55,7 @@ $btn-font-weight: $font-weight-bold;
 // @import '../node_modules/bootstrap/scss/badge';
 // @import '../node_modules/bootstrap/scss/alert';
 // @import '../node_modules/bootstrap/scss/progress';
-// @import '../node_modules/bootstrap/scss/list-group';
+@import '../node_modules/bootstrap/scss/list-group';
 // @import '../node_modules/bootstrap/scss/close';
 // @import '../node_modules/bootstrap/scss/toasts';
 // @import '../node_modules/bootstrap/scss/modal';
@@ -109,11 +110,90 @@ h6 {
     }
   }
 }
-.servicios {
+.servicios,
+.como_funciona,
+.que_ofrecemos {
   padding-top: $p-s;
   padding-bottom: $p-s;
   img {
     width: auto;
     height: 100px;
+  }
+}
+
+.plataforma {
+  li .svg-inline--fa {
+    width: 18px;
+    height: auto;
+  }
+}
+
+.como_funciona {
+  .time_line {
+    div {
+      font-size: 1em;
+      line-height: 1.75em;
+      border-top: 3px solid;
+      border-image: linear-gradient(
+        to left,
+        $alamano_azul 0%,
+        $alamano_naranja 100%
+      );
+      border-image-slice: 1;
+      border-width: 3px;
+      counter-increment: section;
+      position: relative;
+
+      //numbers
+      &:before {
+        content: counter(section);
+        position: absolute;
+        border-radius: 50%;
+        padding: 0px;
+        height: 1.25em;
+        width: 1.25em;
+        background-color: $alamano_azul;
+        text-align: center;
+        line-height: 1.25em;
+        color: $white;
+        font-family: $font-family-sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+      }
+      p {
+        margin: 0 !important;
+      }
+    }
+    //odd number borders
+    div:nth-child(odd) {
+      border-left: 3px solid;
+      padding-left: 0;
+
+      &:before {
+        left: 0%;
+        margin-left: -20px;
+        background-color: $alamano_naranja;
+      }
+    }
+    //even number borders
+    div:nth-child(even) {
+      border-right: 3px solid;
+      padding-right: 0;
+
+      &:before {
+        right: 0%;
+        margin-right: -20px;
+      }
+    }
+    //handle first and last
+    div:first-child {
+      border-top: 0;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+    div:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
   }
 }
