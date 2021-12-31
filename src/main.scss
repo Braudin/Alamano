@@ -6,18 +6,20 @@
 // 2. Include any default variable overrides here
 // font-family: 'Work Sans', sans-serif;
 
-// COLORES CORPORATIVOS
-$alamano_azul: #042974;
-$alamano_naranja: #e64a23;
-$p-s: 50px;
-
 // MODIFICANDO VARIBLES DEL TEMA
+$primary: #e64a23;
+$secondary: #042974;
 $body-bg: #f2f2f2;
-$primary: $alamano_naranja;
 $link-decoration: none !important;
 $list-group-bg: transparent;
+$btn-border-width: none;
+$btn-active-box-shadow: none;
+$btn-focus-width: none;
+$btn-focus-box-shadow: none;
+$input-box-shadow: none;
+$input-focus-box-shadow: none;
+$min-contrast-ratio: 3.5;
 
-// FUENTES
 $font-family-sans-serif: 'Work Sans';
 $font-family-monospace: 'Work Sans';
 $font-weight-lighter: 100;
@@ -25,18 +27,21 @@ $font-weight-light: 100;
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 $font-weight-bolder: 900;
+$input-color: $primary;
+$input-font-weight: $font-weight-bold;
+$input-placeholder-color: rgba($secondary, 0.3);
 
 $btn-font-family: $font-family-sans-serif;
 $btn-font-weight: $font-weight-bold;
 
-// BOTONES
+$p-s: 50px;
 
 @import '../node_modules/bootstrap/scss/variables';
 @import '../node_modules/bootstrap/scss/mixins';
 
 @import '../node_modules/bootstrap/scss/root';
 @import '../node_modules/bootstrap/scss/reboot';
-// @import '../node_modules/bootstrap/scss/type';
+@import '../node_modules/bootstrap/scss/type';
 @import '../node_modules/bootstrap/scss/images';
 @import '../node_modules/bootstrap/scss/containers';
 @import '../node_modules/bootstrap/scss/grid';
@@ -61,7 +66,7 @@ $btn-font-weight: $font-weight-bold;
 // @import '../node_modules/bootstrap/scss/modal';
 // @import '../node_modules/bootstrap/scss/tooltip';
 // @import '../node_modules/bootstrap/scss/popover';
-// @import '../node_modules/bootstrap/scss/carousel';
+@import '../node_modules/bootstrap/scss/carousel';
 // @import '../node_modules/bootstrap/scss/spinners';
 // @import '../node_modules/bootstrap/scss/offcanvas';
 // @import '../node_modules/bootstrap/scss/placeholders';
@@ -80,9 +85,12 @@ h6 {
   font-family: $font-family-sans-serif;
   font-weight: $font-weight-bold;
 }
-.btn-primary {
-  color: #fff !important;
-}
+// .btn-primary {
+//   color: #fff !important;
+//   &.azul {
+//     background-color: $secondary;
+//   }
+// }
 
 .navbar {
   background-color: $body-bg;
@@ -100,7 +108,7 @@ h6 {
       h1 {
         font-size: 3em;
         .servicio {
-          color: $alamano_naranja;
+          color: $primary;
         }
       }
       p {
@@ -127,6 +135,28 @@ h6 {
     height: auto;
   }
 }
+.planes {
+  .col.card {
+    border: 1px solid rgba($primary, 0.3);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba($primary, 0.75);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba($primary, 0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba($primary, 0.75);
+    background-color: rgba($primary, 0.2);
+    img {
+      width: auto;
+      height: 100px;
+    }
+  }
+  .col.card:nth-child(odd) {
+    border: 1px solid rgba($secondary, 0.3);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba($secondary, 0.75);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba($secondary, 0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba($secondary, 0.75);
+    background-color: rgba($secondary, 0.2);
+  }
+}
 
 .como_funciona {
   .time_line {
@@ -134,11 +164,7 @@ h6 {
       font-size: 1em;
       line-height: 1.75em;
       border-top: 3px solid;
-      border-image: linear-gradient(
-        to left,
-        $alamano_azul 0%,
-        $alamano_naranja 100%
-      );
+      border-image: linear-gradient(to left, $secondary 0%, $primary 100%);
       border-image-slice: 1;
       border-width: 3px;
       counter-increment: section;
@@ -152,7 +178,7 @@ h6 {
         padding: 0px;
         height: 1.25em;
         width: 1.25em;
-        background-color: $alamano_azul;
+        background-color: $secondary;
         text-align: center;
         line-height: 1.25em;
         color: $white;
@@ -172,7 +198,7 @@ h6 {
       &:before {
         left: 0%;
         margin-left: -20px;
-        background-color: $alamano_naranja;
+        background-color: $primary;
       }
     }
     //even number borders
