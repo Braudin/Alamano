@@ -1,8 +1,6 @@
 // @import '../node_modules/bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;700;900&display=swap');
 
-@import '../node_modules/bootstrap/scss/functions';
-
 // 2. Include any default variable overrides here
 // font-family: 'Work Sans', sans-serif;
 
@@ -10,14 +8,14 @@
 $primary: #e64a23;
 $secondary: #042974;
 $body-bg: #f2f2f2;
-$link-decoration: none !important;
+$link-decoration: none;
 $list-group-bg: transparent;
-$btn-border-width: none;
-$btn-active-box-shadow: none;
-$btn-focus-width: none;
-$btn-focus-box-shadow: none;
-$input-box-shadow: none;
-$input-focus-box-shadow: none;
+$btn-border-width: 0;
+$btn-active-box-shadow: 0;
+$btn-focus-width: 0;
+$btn-focus-box-shadow: 0;
+$input-box-shadow: 0;
+$input-focus-box-shadow: 0;
 $min-contrast-ratio: 3.5;
 
 $font-family-sans-serif: 'Work Sans';
@@ -36,6 +34,7 @@ $btn-font-weight: $font-weight-bold;
 
 $p-s: 50px;
 
+@import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
 @import '../node_modules/bootstrap/scss/mixins';
 
@@ -85,13 +84,6 @@ h6 {
   font-family: $font-family-sans-serif;
   font-weight: $font-weight-bold;
 }
-// .btn-primary {
-//   color: #fff !important;
-//   &.azul {
-//     background-color: $secondary;
-//   }
-// }
-
 .navbar {
   background-color: $body-bg;
   .logo {
@@ -118,6 +110,35 @@ h6 {
     }
   }
 }
+.como_funciona,
+.portada,
+.numeros {
+  background-color: #dadada;
+}
+.plataforma {
+  background-image: url('./img/oficina-ip-800x445.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: $white;
+  z-index: 1;
+  ul li.list-group-item {
+    color: $white !important;
+    border-color: rgba($white, 0.3) !important;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $secondary;
+    opacity: 0.9;
+    z-index: -1;
+  }
+}
 .servicios,
 .como_funciona,
 .que_ofrecemos {
@@ -137,27 +158,18 @@ h6 {
 }
 .planes {
   .col.card {
-    border: 1px solid rgba($primary, 0.3);
+    border: 1px solid rgba(#cccccc, 0.3);
     border-radius: 20px;
-    box-shadow: 0px 0px 10px 0px rgba($primary, 0.75);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba($primary, 0.75);
-    -moz-box-shadow: 0px 0px 10px 0px rgba($primary, 0.75);
-    background-color: rgba($primary, 0.2);
+    box-shadow: 0px 0px 10px 0px rgba(#cccccc, 0.75);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(#cccccc, 0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(#cccccc, 0.75);
+    background-color: $white; //rgba($primary, 0.2);
     img {
       width: auto;
       height: 100px;
     }
   }
-  .col.card:nth-child(odd) {
-    border: 1px solid rgba($secondary, 0.3);
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px 0px rgba($secondary, 0.75);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba($secondary, 0.75);
-    -moz-box-shadow: 0px 0px 10px 0px rgba($secondary, 0.75);
-    background-color: rgba($secondary, 0.2);
-  }
 }
-
 .como_funciona {
   .time_line {
     div {
@@ -221,5 +233,11 @@ h6 {
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
     }
+  }
+}
+.footer {
+  background-color: #dadada;
+  .footer-cr {
+    background-color: #c2c2c2;
   }
 }
