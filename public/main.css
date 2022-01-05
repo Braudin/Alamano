@@ -9556,13 +9556,20 @@ h6,
   z-index: -1;
 }
 
-.servicios,
+.servicios {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.servicios img {
+  width: auto;
+  height: 50px;
+}
+
 .como_funciona,
 .que_ofrecemos {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.servicios img,
 .como_funciona img,
 .que_ofrecemos img {
   width: auto;
@@ -9647,6 +9654,40 @@ h6,
 }
 .footer .footer-cr {
   background-color: #c2c2c2;
+}
+
+.servi {
+  max-height: 0px;
+  overflow: hidden;
+}
+
+.abierto {
+  animation-name: abrir;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.cerrado {
+  animation-name: cerrar;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes abrir {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 1200px;
+  }
+}
+@keyframes cerrar {
+  from {
+    max-height: 500px;
+  }
+  to {
+    max-height: 0px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

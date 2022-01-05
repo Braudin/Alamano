@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="favicon.ico" />
     <link href="./main.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <title>Alamano</title>
   </head>
@@ -60,9 +64,10 @@
     </section>
     <!-- Servicios -->
     <section class="servicios py-5">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col col-4 py-3">
+      <div class="container text-center">
+        <h1 class="mb-5">¿Nuestros servicios?</h1>
+        <div class="row">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 2.svg"
               class="img-fluid"
@@ -75,7 +80,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 3.svg"
               class="img-fluid"
@@ -88,7 +93,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 4.svg"
               class="img-fluid"
@@ -101,7 +106,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 5.svg"
               class="img-fluid"
@@ -114,7 +119,9 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+        </div>
+        <div class="row servi" id="mas_servi">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 6.svg"
               class="img-fluid"
@@ -127,7 +134,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 7.svg"
               class="img-fluid"
@@ -140,7 +147,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 8.svg"
               class="img-fluid"
@@ -153,7 +160,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 2.svg"
               class="img-fluid"
@@ -166,7 +173,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 3.svg"
               class="img-fluid"
@@ -179,7 +186,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 4.svg"
               class="img-fluid"
@@ -192,7 +199,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 5.svg"
               class="img-fluid"
@@ -205,7 +212,7 @@
               making it over 2000 years old.
             </p>
           </div>
-          <div class="col col-4 py-3">
+          <div class="col col-3 py-3">
             <img
               src="./img/Recurso 6.svg"
               class="img-fluid"
@@ -219,6 +226,9 @@
             </p>
           </div>
         </div>
+        <button type="button" class="btn btn-primary mt-3" id="btn_servi">
+          Ver todos
+        </button>
       </div>
     </section>
     <!-- Como funciona -->
@@ -744,5 +754,21 @@
       defer
       src="../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"
     ></script>
+    <!-- JS Custon -->
+    <script>
+      const masServi = document.querySelector('#mas_servi')
+      const btnServi = document.querySelector('#btn_servi')
+      btnServi.onclick = () => {
+        if (masServi.classList.contains('abierto')) {
+          masServi.classList.add('cerrado')
+          masServi.classList.remove('abierto')
+          btnServi.innerHTML = 'Ver todos'
+        } else {
+          masServi.classList.add('abierto')
+          masServi.classList.remove('cerrado')
+          btnServi.innerHTML = 'Cerrar'
+        }
+      }
+    </script>
   </body>
 </html>
