@@ -8,15 +8,6 @@
 $primary: #e64a23;
 $secondary: #042974;
 $body-bg: #f2f2f2;
-$link-decoration: none;
-$list-group-bg: transparent;
-$btn-border-width: 0;
-$btn-active-box-shadow: 0;
-$btn-focus-width: 0;
-$btn-focus-box-shadow: 0;
-$input-box-shadow: 0;
-$input-focus-box-shadow: 0;
-$min-contrast-ratio: 3.5;
 
 $font-family-sans-serif: 'Work Sans';
 $font-family-monospace: 'Work Sans';
@@ -29,10 +20,21 @@ $input-color: $primary;
 $input-font-weight: $font-weight-bold;
 $input-placeholder-color: rgba($secondary, 0.3);
 
+$link-decoration: none;
+$list-group-bg: transparent;
+$input-box-shadow: 0;
+$input-focus-box-shadow: 0;
+$min-contrast-ratio: 3.5;
+$btn-border-width: 0;
+$btn-active-box-shadow: 0;
+$btn-focus-width: 0;
+$btn-focus-box-shadow: 0;
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 2rem;
 $btn-font-family: $font-family-sans-serif;
 $btn-font-weight: $font-weight-bold;
-
 $p-s: 50px;
+$b-r: 1.5rem;
 
 @import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
@@ -92,6 +94,7 @@ h6 {
   }
 }
 .portada {
+  background-color: #dadada;
   margin-top: 68px;
   padding-top: $p-s;
   padding-bottom: $p-s;
@@ -110,11 +113,25 @@ h6 {
     }
   }
 }
-.como_funciona,
-.portada,
-.numeros {
-  background-color: #dadada;
+.servicios,
+.como_funciona {
+  padding-top: $p-s;
+  padding-bottom: $p-s;
+  img {
+    width: auto;
+    height: 50px;
+  }
 }
+
+.como_funciona {
+  background-color: #dadada;
+  .col {
+    border: 5px solid #dadada;
+    border-radius: $b-r;
+  }
+}
+// IR QUITANDO
+/**
 .plataforma {
   background-image: url('./img/oficina-ip-800x445.jpg');
   background-size: cover;
@@ -278,3 +295,4 @@ h6 {
     max-height: 0px;
   }
 }
+*/
