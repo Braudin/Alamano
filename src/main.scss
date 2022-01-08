@@ -113,8 +113,7 @@ h6 {
     }
   }
 }
-.servicios,
-.como_funciona {
+.servicios {
   padding-top: $p-s;
   padding-bottom: $p-s;
   img {
@@ -126,8 +125,42 @@ h6 {
 .como_funciona {
   background-color: #dadada;
   .col {
-    border: 5px solid #dadada;
-    border-radius: $b-r;
+    padding-left: 0;
+    padding-right: 0;
+    img,
+    h6,
+    p {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .cf_content_number {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      .linea_lT,
+      .linea_rT {
+        width: 50%;
+        height: 1px;
+        background-color: transparent;
+      }
+      .linea_l,
+      .linea_r {
+        width: 50%;
+        height: 1px;
+        background-color: #e64a23;
+      }
+      .cf_number {
+        width: 40px;
+        background-color: $primary;
+        color: $light;
+        border-radius: 50%;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5em;
+      }
+    }
   }
 }
 // IR QUITANDO
